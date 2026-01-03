@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check LocalStorage</title>
+</head>
+<body>
+    <h1>Habit Tracker Storage Check</h1>
+    <div id="output"></div>
+    
+    <script>
+        const output = document.getElementById('output');
+        
+        const habits = localStorage.getItem('habits');
+        const entries = localStorage.getItem('habitEntries');
+        const theme = localStorage.getItem('theme');
+        
+        output.innerHTML = `
+            <h2>LocalStorage Contents:</h2>
+            <h3>Habits:</h3>
+            <pre>${habits || 'No habits stored'}</pre>
+            
+            <h3>Parsed Habits:</h3>
+            <pre>${habits ? JSON.stringify(JSON.parse(habits), null, 2) : 'No habits'}</pre>
+            
+            <h3>Habit Entries:</h3>
+            <pre>${entries || 'No entries stored'}</pre>
+            
+            <h3>Theme:</h3>
+            <pre>${theme || 'No theme stored'}</pre>
+            
+            <h3>All LocalStorage Keys:</h3>
+            <pre>${Object.keys(localStorage).join(', ') || 'No keys found'}</pre>
+        `;
+    </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+.dashboard {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.dashboard.compact {
+  margin-bottom: 1.5rem;
+}
+
+.dashboard.compact .progress-bar-container {
+  margin-bottom: 1rem;
+}
+
+.dashboard.compact .card {
+  margin-bottom: 1rem;
+}
+
+.dashboard.compact .habit-progress-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.progress-bar-container {
+  background: var(--theme-card-bg);
+  backdrop-filter: var(--theme-backdrop);
+  padding: 1.5rem;
+  border-radius: var(--theme-radius);
+  box-shadow: var(--theme-shadow);
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.progress-bar-container h2 {
+  font-size: 1.2rem;
+  color: var(--theme-text);
+  margin: 0;
+}
+
+.progress-percentage {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--theme-accent);
+}
+
+.progress-details {
+  margin-top: 0.5rem;
+  color: var(--theme-text);
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: var(--theme-radius);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--theme-accent);
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--theme-text);
+  opacity: 0.7;
+}
+
+.habit-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.habit-progress-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: var(--theme-radius);
+  transition: transform 0.2s;
+}
+
+.habit-progress-item:hover {
+  transform: translateX(5px);
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.habit-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 200px;
+}
+
+.habit-icon {
+  font-size: 1.8rem;
+}
+
+.habit-name {
+  font-weight: 600;
+  color: var(--theme-text);
+  margin-bottom: 0.2rem;
+}
+
+.habit-category {
+  font-size: 0.8rem;
+  color: var(--theme-text);
+  opacity: 0.5;
+}
+
+.habit-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 180px;
+}
+
+.habit-count {
+  font-size: 0.85rem;
+  color: var(--theme-text);
+  opacity: 0.7;
+}
+
+.habit-streak {
+  font-size: 0.85rem;
+  color: var(--theme-accent);
+  font-weight: 500;
+}
+
+.habit-progress-bar {
+  flex: 1;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: var(--theme-radius);
+  position: relative;
+  overflow: hidden;
+  min-width: 150px;
+}
+
+.habit-progress-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.habit-progress-text {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: var(--theme-text);
+}
+
+.custom-tooltip {
+  background: var(--theme-card-bg);
+  backdrop-filter: var(--theme-backdrop);
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--theme-radius);
+  box-shadow: var(--theme-shadow);
+}
+
+.custom-tooltip .label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--theme-text);
+}
+
+.custom-tooltip .value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--theme-accent);
+  margin-bottom: 0.3rem;
+}
+
+.custom-tooltip .detail {
+  font-size: 0.85rem;
+  color: var(--theme-text);
+  opacity: 0.7;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--theme-text);
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .habit-progress-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .habit-info, .habit-stats {
+    width: 100%;
+  }
+  
+  .habit-progress-bar {
+    width: 100%;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
